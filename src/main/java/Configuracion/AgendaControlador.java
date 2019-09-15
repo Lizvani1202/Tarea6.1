@@ -20,7 +20,7 @@ public class AgendaControlador {
 
     @GetMapping("/agenda/{id}")
     Agenda one(@PathVariable Long id){
-        return agendaRepository.findById(id).orElseThrow(()-> AgendaNotFoundException(id));
+        return agendaRepository.findById(id).orElseThrow(()-> new AgendaNotFoundException(id));
 
     }
     @PutMapping("/agenda/{id}")
